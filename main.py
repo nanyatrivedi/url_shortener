@@ -6,13 +6,9 @@ from database import SessionLocal, engine
 from models import Base, URL
 from utils import generate_short_code
 
-# Create the database tables
 Base.metadata.create_all(bind=engine)
-
-# Initialize FastAPI app
 app = FastAPI()
 
-# Dependency to get DB session
 def get_db():
     db = SessionLocal()
     try:
